@@ -14,7 +14,7 @@ new_candidates=np.random.rand(1,Num_var)
 # %%
 # Training the model
 data_clustered=kmp()
-data_clustered.fit(datapoints,Num_repeat=20)
+data_clustered.fit(datapoints,Num_repeat=20,k=3)
 # %%
 #Trained Model Information
 print(f'The best suggested Number of Cluster={data_clustered.NumCluster}')
@@ -26,3 +26,5 @@ print(f'clusters counting memebrs{data_clustered.clustr_counts}')
 data_clustered.visual_ploting(None,new_candidates,method=1) #assigning to the nearest center
 data_clustered.visual_ploting(None,new_candidates,method=2,K_nn=3) #assigning based on nearest neighbors
 
+input('Press Enter to close plots')
+# %%
